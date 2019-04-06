@@ -4,22 +4,24 @@ using UnityEngine;
 
 public class PlatformController : MonoBehaviour {
 
-    public float initial_pos;
-    public float final_pos;
-    Transform platform;
+    public GameObject pos_inicial;
+    public GameObject platform;
+
 
 	// Use this for initialization
 	void Start () {
-        platform = GetComponent<Transform>();	
+      
+        platform.transform.position = pos_inicial.transform.position;
+ 
 	}
 	
 	// Update is called once per frame
 	void Update () {
         move();
-	}
+    }
 
     void move()
     {
-        platform.Translate(new Vector3(0, 0, 1)*Time.deltaTime);
+     transform.position = new Vector3(Mathf.PingPong(Time.time, 3), transform.position.y, transform.position.z);
     }
 }
