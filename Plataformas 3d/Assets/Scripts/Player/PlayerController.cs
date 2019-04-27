@@ -51,7 +51,7 @@ public class PlayerController : MonoBehaviour {
         /*FIN MOVIMIENTO*/
 
 
-        /*----------------ANIMACIONES--------------------------------*/
+        /*----------------ANIMACIONES--------*/
         if (speed > 0.1)
         {
             animator.SetBool("move", true);
@@ -66,7 +66,7 @@ public class PlayerController : MonoBehaviour {
 
 
 
-        /*********************** SALTO ***********************************/
+        /*----- SALTO -----*/
 
         if (Input.GetButtonDown("A") && (isGrounded == true || current_jumps<JUMPS))
         {
@@ -77,6 +77,8 @@ public class PlayerController : MonoBehaviour {
 
         }
 
+        /*----- DASH -----*/
+        /*
         if (Input.GetButtonDown("B") && isGrounded == false && can_dash == true)
         {
             can_dash = false;
@@ -84,7 +86,7 @@ public class PlayerController : MonoBehaviour {
             runSpeed = 15f;
         }
 
-
+    */
 
     }//FIN UPDATE
     
@@ -94,8 +96,8 @@ public class PlayerController : MonoBehaviour {
     {
         isGrounded = true;
         current_jumps = 0;
-        runSpeed = 6f;
         can_dash = true;
+        //runSpeed = 6f;
         //animator.SetBool("Grounded", true);
     }
 }
