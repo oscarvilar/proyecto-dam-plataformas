@@ -10,8 +10,9 @@ public class EsferaVelocidadController : MonoBehaviour {
     bool timer_activado = false;
     public Text tiempoText;
     float tiempo = 5f;
-    //public GameObject esfera_velocidad;
-
+    public GameObject esfera_velocidad;
+    SphereCollider esfera_velocidad_collider;
+    MeshRenderer esfera_velocidad_modelo;
 
 
     // Use this for initialization
@@ -19,7 +20,10 @@ public class EsferaVelocidadController : MonoBehaviour {
         tiempoText.enabled = true;
         player = GameObject.Find("Player");//buscamos el objeto con el nombre Player
         playerController = player.GetComponent<PlayerController>();//accede al script PlayerController
-
+        esfera_velocidad_collider = esfera_velocidad.GetComponent<SphereCollider>();
+        esfera_velocidad_modelo = esfera_velocidad.GetComponentInChildren<MeshRenderer>();
+        esfera_velocidad_collider.enabled = true;
+        esfera_velocidad_modelo.enabled = true;
     }
 	
 	// Update is called once per frame
@@ -30,7 +34,7 @@ public class EsferaVelocidadController : MonoBehaviour {
     void boost_velocidad()
     {
         playerController.runSpeed = playerController.runSpeed * boost;
-        //Destroy(esfera_velocidad);
+        
     }
 
     void iniciar_cuenta_atras()
@@ -46,6 +50,7 @@ public class EsferaVelocidadController : MonoBehaviour {
                 tiempo = 0;
                 tiempoText.enabled = false;
                 playerController.runSpeed = 6;
+                Destroy(esfera_velocidad);
 
             }
         }
@@ -59,6 +64,8 @@ public class EsferaVelocidadController : MonoBehaviour {
     {
         if (col.gameObject == player)
         {
+            esfera_velocidad_collider.enabled = false;
+            esfera_velocidad_modelo.enabled = false;
             timer_activado = true;
             tiempo = 5f;
             boost_velocidad();

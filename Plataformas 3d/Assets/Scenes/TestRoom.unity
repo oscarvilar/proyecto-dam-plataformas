@@ -2005,6 +2005,7 @@ Prefab:
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 64484272124017304, guid: 1f5d98c5ba034a846bb35ff27e18823c, type: 2}
+    - {fileID: 33673866850568240, guid: 1f5d98c5ba034a846bb35ff27e18823c, type: 2}
   m_SourcePrefab: {fileID: 100100000, guid: 1f5d98c5ba034a846bb35ff27e18823c, type: 2}
   m_IsPrefabAsset: 0
 --- !u!4 &1659290687 stripped
@@ -2047,6 +2048,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   boost: 2
   tiempoText: {fileID: 80314614}
+  esfera_velocidad: {fileID: 1720104108}
 --- !u!135 &1720104110
 SphereCollider:
   m_ObjectHideFlags: 0
