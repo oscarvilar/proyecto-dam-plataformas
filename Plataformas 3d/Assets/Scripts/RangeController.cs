@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PistolController : MonoBehaviour {
+public class RangeController : MonoBehaviour {
 
     public Rigidbody proyectile;
 
