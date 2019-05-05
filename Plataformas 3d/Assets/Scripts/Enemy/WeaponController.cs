@@ -15,12 +15,6 @@ public class WeaponController : MonoBehaviour {
         playerHealth = player.GetComponent<PlayerHealth>();
     }
 
-    void OnTriggerEnter(Collider other)
-    {
-
-    }
-
-
     void OnTriggerExit(Collider other)
     {
         if (other.gameObject == player)

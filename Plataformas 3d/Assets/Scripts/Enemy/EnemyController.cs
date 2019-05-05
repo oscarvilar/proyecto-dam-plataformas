@@ -5,48 +5,40 @@ using UnityEngine.AI;
 
 public class EnemyController : MonoBehaviour {
 
-    Transform player;   
-    Transform enemy;
+    public GameObject player;   
+    public GameObject enemy;
                 
     NavMeshAgent nav;              
     Animator anim;
-
    
     void Awake()
     {
         // Set up the references.
-        player = GameObject.FindGameObjectWithTag("Player").transform;
-        enemy = GameObject.FindGameObjectWithTag("Enemy").transform;
         nav = GetComponent<NavMeshAgent>();
         anim = GetComponent<Animator>();
+        nav.enabled = false;
+        
     }
 
-    // Update is called once per frame
-    void Update () {
-        AggroDistance();
-
-
-    }
-
-    void AggroDistance()
+    private void OnTriggerStay(Collider col)
     {
-        double aggro = Vector3.Distance(player.transform.position, enemy.transform.position);
-        //Debug.Log(aggro);
-
-        if (aggro < 10)
+        if (col.gameObject == player)
         {
-            nav.SetDestination(player.position);
             anim.SetBool("Aggro", true);
+            nav.enabled = true;
+            nav.SetDestination(player.transform.position);
+            Debug.Log(nav.enabled);
         }
+    }
 
-        else
-        {
-            
-            anim.SetBool("Aggro", false);
-        }
-
+    private void OnTriggerExit(Collider other)
+    {
+        anim.SetBool("Aggro", false);
+        nav.enabled = false;
+        Debug.Log(nav.enabled);
 
     }
+
 
 
 }
