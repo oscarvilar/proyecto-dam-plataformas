@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.AI;
 
 public class EnemyHealth : MonoBehaviour
 {
@@ -8,8 +9,7 @@ public class EnemyHealth : MonoBehaviour
     public int startingHealth = 100;            
     public int currentHealth;
     public GameObject enemy;
-    Animator anim;                                                                
-    //CapsuleCollider capsuleCollider;            
+    Animator anim;                                                                            
     bool isDead;                               
     EnemyController enemyController;
     
@@ -19,7 +19,6 @@ public class EnemyHealth : MonoBehaviour
     {
         enemyController = GetComponent<EnemyController>();
         anim = GetComponent<Animator>();
-        //capsuleCollider = GetComponent<CapsuleCollider>();
         currentHealth = startingHealth;
     }
 
@@ -31,6 +30,7 @@ public class EnemyHealth : MonoBehaviour
 
         if (currentHealth <= 0)
         {
+            
             Death();
             Debug.Log("Enemigo muerto");
         }
@@ -39,11 +39,11 @@ public class EnemyHealth : MonoBehaviour
 
     void Death()
     {
+        enemy.GetComponent<EnemyController>().enabled = false;
+        enemy.GetComponent<NavMeshAgent>().enabled = false;
         isDead = true;
-
-       // capsuleCollider.isTrigger = true;
         anim.SetTrigger("Dead");
-        enemyController.enabled=false;
+        
  
     }
 

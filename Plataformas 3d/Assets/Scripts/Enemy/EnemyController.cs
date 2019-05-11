@@ -8,7 +8,7 @@ public class EnemyController : MonoBehaviour {
     public GameObject player;   
     public GameObject enemy;
                 
-    NavMeshAgent nav;              
+    public NavMeshAgent nav;              
     Animator anim;
    
     void Awake()
