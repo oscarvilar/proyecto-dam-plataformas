@@ -4,19 +4,13 @@ using UnityEngine;
 
 public class StaffController : MonoBehaviour {
 
-    GameObject enemy;
-    EnemyHealth enemyHealth;
-    public int attackDamage;
-    public bool inRange;
+    //EnemyHealth enemyHealth;
+    public int playerAttackDamage;
     GameObject player;
     Animator anim;
 
-
-    // Use this for initialization
     void Start()
     {
-        enemy = GameObject.FindGameObjectWithTag("Enemy");
-        enemyHealth = enemy.GetComponent<EnemyHealth>();
         player = GameObject.FindGameObjectWithTag("Player");
         anim = player.GetComponent<Animator>();
     }
@@ -25,38 +19,20 @@ public class StaffController : MonoBehaviour {
     {
         if (Input.GetButtonDown("X"))
         {
-            anim.SetTrigger("MeleeAttack");
-            if (enemyHealth.currentHealth > 0 && inRange == true)
-            {
-                enemyHealth.TakeDamage(attackDamage);
-            }
-
+            anim.SetTrigger("MeleeAttack"); 
         }
 
     }
 
 
 
-     void OnTriggerEnter(Collider other)
+     void OnTriggerEnter(Collider weaponCollider)
     {
-       if(other.gameObject == enemy)
+        if (weaponCollider.gameObject.tag == "Enemy")
         {
-            inRange = true;
-            Debug.Log(inRange);
+            Debug.Log("hit");
+            weaponCollider.gameObject.GetComponent<EnemyHealth>().TakeDamage(playerAttackDamage);
         }
     }
-
-
-    public void OnTriggerExit(Collider other)
-    {
-
-
-        if (other.gameObject == enemy)
-        {
-            inRange = false;
-            Debug.Log(inRange);
-        }
-                
-        }
 
 }

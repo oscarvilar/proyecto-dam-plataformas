@@ -5,15 +5,11 @@ using UnityEngine;
 public class EnemyHealth : MonoBehaviour
 {
 
-	
     public int startingHealth = 100;            
-    public int currentHealth;                   
-    //public AudioClip deathClip;                 
-
-
-    Animator anim;                              
-    //AudioSource enemyAudio;                                   
-    CapsuleCollider capsuleCollider;            
+    public int currentHealth;
+    public GameObject enemy;
+    Animator anim;                                                                
+    //CapsuleCollider capsuleCollider;            
     bool isDead;                               
     EnemyController enemyController;
     
@@ -23,50 +19,37 @@ public class EnemyHealth : MonoBehaviour
     {
         enemyController = GetComponent<EnemyController>();
         anim = GetComponent<Animator>();
-       // enemyAudio = GetComponent<AudioSource>();
-        capsuleCollider = GetComponent<CapsuleCollider>();
-
-        // Setting the current health when the enemy first spawns.
+        //capsuleCollider = GetComponent<CapsuleCollider>();
         currentHealth = startingHealth;
     }
 
 
     public void TakeDamage(int amount)
     {
-        // If the enemy is dead...
-        if (isDead)
-            // ... no need to take damage so exit the function.
-            return;
 
-        // Play the hurt sound effect.
-        //enemyAudio.Play();
-
-        // Reduce the current health by the amount of damage sustained.
         currentHealth -= amount;
 
-        // If the current health is less than or equal to zero...
         if (currentHealth <= 0)
         {
-            // ... the enemy is dead.
             Death();
+            Debug.Log("Enemigo muerto");
         }
     }
 
 
     void Death()
     {
-        // The enemy is dead.
         isDead = true;
 
-        // Turn the collider into a trigger so shots can pass through it.
-        capsuleCollider.isTrigger = true;
-
-        // Tell the animator that the enemy is dead.
+       // capsuleCollider.isTrigger = true;
         anim.SetTrigger("Dead");
         enemyController.enabled=false;
-        //falta desactivar el trigger de la espada 
-        
+ 
+    }
 
+    public void DestroyEnemy()
+    {
+        Destroy(enemy);
     }
 
 }
