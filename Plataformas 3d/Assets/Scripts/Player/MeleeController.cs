@@ -7,7 +7,7 @@ public class MeleeController : MonoBehaviour {
     public int playerAttackDamage;
     public GameObject player;
     Animator anim;
-    bool hit;
+    public bool hit;
     EnemyHealth enemyHealth;
     
     
@@ -21,11 +21,9 @@ public class MeleeController : MonoBehaviour {
         if (Input.GetButtonDown("X"))
             anim.SetTrigger("MeleeAttack");
         if (hit)
-            {
-                {
-                enemyHealth.TakeDamage(playerAttackDamage);
-                }
-            }
+        {
+            enemyHealth.TakeDamage(playerAttackDamage);
+        }
     }
 
 
@@ -33,8 +31,8 @@ public class MeleeController : MonoBehaviour {
     {
         if (weaponCollider.gameObject.tag == "HitBoxEnemy")
         {
-           enemyHealth =  weaponCollider.gameObject.GetComponentInParent<EnemyHealth>();
-           hit = true;
+            enemyHealth = weaponCollider.gameObject.GetComponentInParent<EnemyHealth>();
+            hit = true;
         }
     }
 

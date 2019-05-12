@@ -9,14 +9,15 @@ public class EnemyHealth : MonoBehaviour
     public int startingHealth = 100;            
     public int currentHealth;
     public GameObject enemy;
-    Animator anim;                                                                            
-    bool isDead;                               
+    MeleeController meleController;
+    Animator anim;                                                                                                           
     EnemyController enemyController;
     
 
 
     void Awake()
     {
+        meleController = GetComponent<MeleeController>();
         enemyController = GetComponent<EnemyController>();
         anim = GetComponent<Animator>();
         currentHealth = startingHealth;
@@ -25,10 +26,17 @@ public class EnemyHealth : MonoBehaviour
 
     public void TakeDamage(int amount)
     {
+        if(amount > currentHealth)
+        {
+            Death();
+        }
+        else
+        {
+            currentHealth -= amount;
+        }
+        
 
-        currentHealth -= amount;
-
-        if (currentHealth <= 0)
+        if (currentHealth == 0)
         {
             
             Death();
@@ -39,12 +47,12 @@ public class EnemyHealth : MonoBehaviour
 
     void Death()
     {
-        enemy.GetComponent<EnemyController>().enabled = false;
-        enemy.GetComponent<NavMeshAgent>().enabled = false;
-        isDead = true;
-        anim.SetTrigger("Dead");
         
- 
+        anim.SetTrigger("Dead");
+        //animation event al final de la animacion que ejecuta DestroyEnemy()
+
+        //enemy.GetComponent<EnemyController>().enabled = false;
+        //enemy.GetComponent<NavMeshAgent>().enabled = false;
     }
 
     public void DestroyEnemy()
