@@ -15,17 +15,19 @@ public class MeleeController : MonoBehaviour {
     void Start () {
         anim = player.GetComponent<Animator>();
     }
-	
-	// Update is called once per frame
-	void Update () {
+
+    // Update is called once per frame
+    void Update() {
         if (Input.GetButtonDown("X"))
+        {
             anim.SetTrigger("MeleeAttack");
-        if (hit)
+            if (hit)
             {
                 {
-                enemyHealth.TakeDamage(playerAttackDamage);
+                    enemyHealth.TakeDamage(playerAttackDamage);
                 }
             }
+        }
     }
 
 
