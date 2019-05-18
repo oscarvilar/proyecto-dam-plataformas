@@ -32,7 +32,7 @@ public class EnemyAttack : MonoBehaviour
         if (other.gameObject == player)
         {
             playerInRange = true;
-            Debug.Log("playerInRange" + playerInRange);
+
         }
     }
 
@@ -43,7 +43,6 @@ public class EnemyAttack : MonoBehaviour
         if (other.gameObject == player)
         {
             playerInRange = false;
-            Debug.Log("playerInRange"+playerInRange);
         }
     }
 

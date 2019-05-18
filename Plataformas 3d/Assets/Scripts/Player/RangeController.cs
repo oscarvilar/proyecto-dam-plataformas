@@ -16,7 +16,6 @@ public class RangeController : MonoBehaviour {
         if (Input.GetButtonDown("Y"))
         {
             shoot();
-            Debug.Log("shoot");
         }
 	}
 

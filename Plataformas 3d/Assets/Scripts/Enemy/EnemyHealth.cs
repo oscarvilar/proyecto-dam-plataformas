@@ -32,7 +32,7 @@ public class EnemyHealth : MonoBehaviour
         {
             
             Death();
-            Debug.Log("Enemigo muerto");
+
         }
     }
 

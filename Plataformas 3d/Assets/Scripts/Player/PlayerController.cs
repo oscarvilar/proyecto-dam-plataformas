@@ -15,7 +15,6 @@ public class PlayerController : MonoBehaviour {
     public bool isGrounded;
     private const int JUMPS = 2;
     private int current_jumps;
-    bool can_dash;
   
     void Start()
     {
@@ -23,7 +22,6 @@ public class PlayerController : MonoBehaviour {
         cameraT = Camera.main.transform;
         rb = GetComponent<Rigidbody>();
         isGrounded = true;
-        can_dash = true;
         //animator.SetBool("Grounded", true);
     }
 
@@ -77,16 +75,6 @@ public class PlayerController : MonoBehaviour {
 
         }
 
-        /*----- DASH -----*/
-        /*
-        if (Input.GetButtonDown("B") && isGrounded == false && can_dash == true)
-        {
-            can_dash = false;
-            Debug.Log("b");
-            runSpeed = 15f;
-        }
-
-    */
 
     }//FIN UPDATE
     
@@ -96,7 +84,6 @@ public class PlayerController : MonoBehaviour {
     {
         isGrounded = true;
         current_jumps = 0;
-        can_dash = true;
         //runSpeed = 6f;
         //animator.SetBool("Grounded", true);
     }

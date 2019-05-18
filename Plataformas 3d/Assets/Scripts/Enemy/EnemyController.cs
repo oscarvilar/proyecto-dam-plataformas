@@ -27,7 +27,7 @@ public class EnemyController : MonoBehaviour {
             anim.SetBool("Aggro", true);
             nav.enabled = true;
             nav.SetDestination(player.transform.position);
-            Debug.Log(nav.enabled);
+
         }
     }
 
@@ -35,7 +35,7 @@ public class EnemyController : MonoBehaviour {
     {
         anim.SetBool("Aggro", false);
         nav.enabled = false;
-        Debug.Log(nav.enabled);
+
 
     }
 
