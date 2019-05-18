@@ -23,7 +23,6 @@ public class EnemyAttack : MonoBehaviour
         playerHealth = player.GetComponent<PlayerHealth>();
         enemyHealth = enemy.GetComponent<EnemyHealth>();
         enemyController = enemy.GetComponent<EnemyController>();
-        anim.SetBool("InRange", false);
     }
 
 

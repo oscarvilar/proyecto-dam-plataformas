@@ -31,7 +31,7 @@ public class MeleeController : MonoBehaviour {
     }
 
 
-    private void OnTriggerEnter(Collider weaponCollider)
+    private void OnTriggerStay(Collider weaponCollider)
     {
         if (weaponCollider.gameObject.tag == "HitBoxEnemy")
         {
@@ -40,11 +40,4 @@ public class MeleeController : MonoBehaviour {
         }
     }
 
-    private void OnTriggerExit(Collider weaponCollider)
-    {
-        if (weaponCollider.gameObject.tag == "HitBoxEnemy")
-        {
-            hit = false;
-        }
-    }
 }
