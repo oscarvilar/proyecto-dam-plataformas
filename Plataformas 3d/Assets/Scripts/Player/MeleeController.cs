@@ -18,7 +18,7 @@ public class MeleeController : MonoBehaviour {
 
     // Update is called once per frame
     void Update() {
-        if (Input.GetButtonDown("X"))
+        if (Input.GetButtonDown("X") || Input.GetMouseButtonDown(0))
         {
             anim.SetTrigger("MeleeAttack");
             if (hit)

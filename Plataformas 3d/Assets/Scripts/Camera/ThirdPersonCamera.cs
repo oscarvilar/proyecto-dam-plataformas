@@ -26,8 +26,15 @@ public class ThirdPersonCamera : MonoBehaviour {
     }
 
     void LateUpdate () {
-        yaw += Input.GetAxis("RightStickHorizontal")* sensibility;//eje horizontal
-        pitch -= Input.GetAxis("RightStickVertical") * sensibility;//eje vertical(invertido)
+        //MANDO
+        //yaw += Input.GetAxis("RightStickHorizontal")* sensibility;//eje horizontal
+        //pitch -= Input.GetAxis("RightStickVertical") * sensibility;//eje vertical(invertido)
+
+        //RATON
+        yaw += Input.GetAxis("Mouse X") * sensibility;//eje horizontal
+        pitch -= Input.GetAxis("Mouse Y") * sensibility;//eje vertical(invertido)
+
+
         pitch = Mathf.Clamp(pitch,pitchMin, pitchMax);             //ponerle a un valor un max y un min
 
         currentRotation = Vector3.SmoothDamp(currentRotation, new Vector3(pitch, yaw), ref rotationSmoothVelocity, rotationSmoothTime);

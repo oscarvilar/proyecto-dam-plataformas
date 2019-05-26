@@ -14,7 +14,7 @@ public class RangeController : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-        if (Input.GetButtonDown("Y") && municion.GetComponent<Municion>().getCantidadMunicion()>=1)
+        if ((Input.GetButtonDown("Y") || Input.GetMouseButtonDown(1)) && municion.GetComponent<Municion>().getCantidadMunicion()>=1)
         {
             shoot();
             municion.GetComponent<Municion>().bajarMunicion();

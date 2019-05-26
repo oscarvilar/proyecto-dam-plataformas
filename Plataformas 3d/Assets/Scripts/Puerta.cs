@@ -21,7 +21,7 @@ public class Puerta : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-        if (Input.GetButtonDown("B") && puerta_abierta == false)
+        if ((Input.GetButtonDown("B") || Input.GetKeyDown("b"))&& puerta_abierta == false)
         {
              abrir();
         }
@@ -32,10 +32,11 @@ public class Puerta : MonoBehaviour {
     {
         if (col.gameObject == player)
         {
-            //MOSTRAR TEXTO
-            texto_puerta.enabled = true;
-            puedo_abrir = true;
-
+            if (puerta_abierta == false)
+            {
+                texto_puerta.enabled = true;
+                puedo_abrir = true;
+            }
         }
     }
 

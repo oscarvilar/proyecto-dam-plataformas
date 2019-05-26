@@ -66,7 +66,7 @@ public class PlayerController : MonoBehaviour {
 
         /*----- SALTO -----*/
 
-        if (Input.GetButtonDown("A") && (isGrounded == true || current_jumps<JUMPS))
+        if ((Input.GetButtonDown("A") || Input.GetKeyDown("space") )&& (isGrounded == true || current_jumps<JUMPS))
         {
             rb.AddForce(0, jumpHeigth, 0);
             current_jumps++;
