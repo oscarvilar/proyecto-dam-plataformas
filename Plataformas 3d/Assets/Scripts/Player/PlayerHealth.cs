@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class PlayerHealth : MonoBehaviour {
     public int startingHealth = 100;                                //vida inicial
@@ -22,9 +23,10 @@ public class PlayerHealth : MonoBehaviour {
         playerController = GetComponent<PlayerController>();
         currentHealth = startingHealth;                             //inicializar vida
     }
-	
-	// Update is called once per frame
-	void Update () {
+
+
+    // Update is called once per frame
+    void Update () {
 
         //si el jugador recibe daño
         if (damaged)
@@ -43,7 +45,8 @@ public class PlayerHealth : MonoBehaviour {
 
         if (isDead && Input.GetKeyDown("space"))
         {
-            revivir();
+            //revivir();
+            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
         }
     }
 

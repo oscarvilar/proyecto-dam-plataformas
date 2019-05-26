@@ -15,6 +15,7 @@ public class PlayerController : MonoBehaviour {
     public bool isGrounded;
     private const int JUMPS = 2;
     private int current_jumps;
+    private GameMaster gm;
 
 
 
@@ -24,7 +25,10 @@ public class PlayerController : MonoBehaviour {
         cameraT = Camera.main.transform;
         rb = GetComponent<Rigidbody>();
         isGrounded = true;
-        //animator.SetBool("Grounded", true);
+        gm = GameObject.FindGameObjectWithTag("gm").GetComponent<GameMaster>();
+        transform.position = gm.ultimo_checkpoint;
+
+
     }
 
     void Update()

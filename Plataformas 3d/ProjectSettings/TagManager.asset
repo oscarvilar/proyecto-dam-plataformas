@@ -8,6 +8,7 @@ TagManager:
   - Proyectile
   - target
   - HitBoxEnemy
+  - gm
   layers:
   - Default
   - TransparentFX

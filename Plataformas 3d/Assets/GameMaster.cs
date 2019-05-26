@@ -4,7 +4,20 @@ using UnityEngine;
 
 public class GameMaster : MonoBehaviour {
 
-    public static GameMaster instance;
+    private static GameMaster instance;
     public Vector3 ultimo_checkpoint;
+
+	// Use this for initialization
+	void Awake () {
+        if (instance == null)
+        {
+            instance = this;
+            DontDestroyOnLoad(instance);
+        }
+        else
+        {
+            Destroy(gameObject);
+        }
+     }
 
 }
