@@ -14,6 +14,7 @@ public class PlayerHealth : MonoBehaviour {
     PlayerController playerController;                              //Ref al script player controller
     bool isDead;
     bool damaged;
+    public GameMaster gm;
 
     // Use this for initialization
     void Awake () {
@@ -39,6 +40,11 @@ public class PlayerHealth : MonoBehaviour {
         }
 
         damaged = false;
+
+        if (isDead && Input.GetKeyDown("space"))
+        {
+            revivir();
+        }
     }
 
 
@@ -61,16 +67,18 @@ public class PlayerHealth : MonoBehaviour {
     public void Death()
     {
         isDead = true;
-
-
         animator.SetTrigger("Dead");
         playerController.enabled = false;
+
     }
 
-    private void revivir_en_checkpoint()
+    private void revivir()
     {
-        //transform.position = checkpoint_position;
+        isDead = false;
+        playerController.enabled = true;
+        animator.SetTrigger("revive");
         currentHealth = startingHealth;
+        transform.position = gm.ultimo_checkpoint;
     }
 
 }

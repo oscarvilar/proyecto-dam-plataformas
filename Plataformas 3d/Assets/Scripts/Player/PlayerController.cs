@@ -15,7 +15,9 @@ public class PlayerController : MonoBehaviour {
     public bool isGrounded;
     private const int JUMPS = 2;
     private int current_jumps;
-  
+
+
+
     void Start()
     {
         animator = GetComponent<Animator>();
