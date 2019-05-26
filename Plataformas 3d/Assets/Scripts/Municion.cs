@@ -4,47 +4,50 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class ScoreController : MonoBehaviour {
-    public Text ui_score;
+public class Municion : MonoBehaviour
+{
+    public Text ui_municion;
     public static int cantidad = 0;
     public GameObject player;
     public GameObject moneda;
-    SphereCollider moneda_collider;
+    Collider moneda_collider;
     MeshRenderer moneda_modelo;
-    public int valor_moneda;
 
     // Use this for initialization
-    void Start () {
-        ui_score.enabled = true;
-        moneda_collider = moneda.GetComponent<SphereCollider>();
+    void Start()
+    {
+        ui_municion.enabled = true;
+        moneda_collider = moneda.GetComponent<BoxCollider>();
         moneda_modelo = moneda.GetComponentInChildren<MeshRenderer>();
         moneda_collider.enabled = true;
         moneda_modelo.enabled = true;
     }
-	
-	// Update is called once per frame
-	void Update () {
-        ui_score.text = cantidad.ToString();
+
+    // Update is called once per frame
+    void Update()
+    {
+        ui_municion.text = cantidad.ToString();
     }
 
     private void OnTriggerEnter(Collider col)
     {
         if (col.gameObject == player)
         {
-            cantidad += valor_moneda;
+            cantidad+=20;
             moneda_collider.enabled = false;
             moneda_modelo.enabled = false;
         }
     }
 
-    public void pagar_monedas(int cantidad_pagar)
+    public int getCantidadMunicion()
     {
-        cantidad -= cantidad_pagar;
+        int cantidad_municion = cantidad;
+        return cantidad_municion;
     }
 
-    public int get_cantidad()
+    public void bajarMunicion()
     {
-        return cantidad;
+        cantidad--;
     }
 
 }

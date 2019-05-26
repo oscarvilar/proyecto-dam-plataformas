@@ -43,6 +43,7 @@ public class Curacion : MonoBehaviour {
         {
             playerHealth.currentHealth = 100;
             healthSlider.value = 100;
+            Destroy(esfera_curacion);
         }
         else
         {

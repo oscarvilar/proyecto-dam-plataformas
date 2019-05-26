@@ -18,11 +18,19 @@ public class ProyectileController : MonoBehaviour {
 	
 	// Update is called once per frame
 	void FixedUpdate () {
-        MarcarEnemigoCercano(0, 25);
-        Vector3 direction = (mas_cercano.transform.position - transform.position).normalized;
 
-        Vector3 deltaPosition = speed * direction * Time.deltaTime;
-        rb.MovePosition(transform.position + deltaPosition);
+        if (MarcarEnemigoCercano(0, 25) != null)
+        {
+           
+            Vector3 direction = (MarcarEnemigoCercano(0, 25).transform.position - transform.position).normalized;
+            Vector3 deltaPosition = speed * direction * Time.deltaTime;
+            rb.MovePosition(transform.position + deltaPosition);
+        }
+
+        if (MarcarEnemigoCercano(0, 25) == null)
+        {
+            Destroy(this.gameObject);
+        }
 
     }
 
