@@ -8,11 +8,9 @@ public class PlayerHealth : MonoBehaviour {
     public int currentHealth;                                       //Vida actual
     public Slider healthSlider;                                     //Ref al slider (barra de vida)
     public Image damageImage;                                       //Ref imagen que aparece al perder vida
-    //public AudioClip deathClip;
     public float flashSpeed = 5f;                                   //duracion imagen
     public Color flashColour = new Color(1f, 0f, 0f,0.1f);          //color rojo
-    Animator animator;                                              //Ref al animator del player
-    //AudioSource playerAudio;      
+    Animator animator;                                              //Ref al animator del player     
     PlayerController playerController;                              //Ref al script player controller
     bool isDead;
     bool damaged;
@@ -20,9 +18,7 @@ public class PlayerHealth : MonoBehaviour {
     // Use this for initialization
     void Awake () {
         animator = GetComponent<Animator>();                        //GET COMPONENTES
-        //playerAudio =  GetComponent<AudioSource>():
         playerController = GetComponent<PlayerController>();
-
         currentHealth = startingHealth;                             //inicializar vida
     }
 	
@@ -58,11 +54,11 @@ public class PlayerHealth : MonoBehaviour {
         if (currentHealth <= 0 && !isDead)
         {
             Death();
+            
         }
     }
 
-
-    void Death()
+    public void Death()
     {
         isDead = true;
 
@@ -70,4 +66,11 @@ public class PlayerHealth : MonoBehaviour {
         animator.SetTrigger("Dead");
         playerController.enabled = false;
     }
+
+    private void revivir_en_checkpoint()
+    {
+        //transform.position = checkpoint_position;
+        currentHealth = startingHealth;
+    }
+
 }
