@@ -12,6 +12,7 @@ public class EnemyHealth : MonoBehaviour
     Animator anim;                                                                            
     bool isDead;                               
     EnemyController enemyController;
+    public GameObject objeto;
     
 
 
@@ -43,8 +44,8 @@ public class EnemyHealth : MonoBehaviour
         enemy.GetComponent<NavMeshAgent>().enabled = false;
         isDead = true;
         anim.SetTrigger("Dead");
-        
- 
+        //Instantiate(objeto, transform.position, transform.rotation);
+
     }
 
     public void DestroyEnemy()

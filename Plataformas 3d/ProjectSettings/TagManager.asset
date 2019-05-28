@@ -9,6 +9,7 @@ TagManager:
   - target
   - HitBoxEnemy
   - gm
+  - HealthUi
   layers:
   - Default
   - TransparentFX
