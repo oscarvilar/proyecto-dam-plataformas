@@ -44,7 +44,7 @@ public class EnemyHealth : MonoBehaviour
         enemy.GetComponent<NavMeshAgent>().enabled = false;
         isDead = true;
         anim.SetTrigger("Dead");
-        //Instantiate(objeto, transform.position, transform.rotation);
+        Instantiate(objeto, transform.position, transform.rotation);
 
     }
 

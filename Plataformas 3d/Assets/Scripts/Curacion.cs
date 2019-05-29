@@ -6,8 +6,9 @@ using UnityEngine.UI;
 public class Curacion : MonoBehaviour {
 
 
-    public Slider healthSlider;
-    public GameObject player;
+    Slider healthSlider;
+    //public GameObject player;
+    GameObject player;
     int currentHelath;
     public int cantidad_curada;
     PlayerHealth playerHealth;
@@ -17,7 +18,8 @@ public class Curacion : MonoBehaviour {
     // Use this for initialization
     void Start()
     {
-        GameObject player = GameObject.Find("Player");
+        player = GameObject.FindGameObjectWithTag("Player");
+        healthSlider = GameObject.FindGameObjectWithTag("HealthUi").GetComponent<Slider>();
         playerHealth = player.GetComponent<PlayerHealth>();
 
     }
