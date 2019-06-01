@@ -21,7 +21,7 @@ public class Atacar : MonoBehaviour {
         {
             Debug.Log("trigger texto");
             info.enabled = true;
-            info.text = "Pulsa Click Der/X para atacar";
+            info.text = "Pulsa Click Izq/X para atacar";
         }
     }
 

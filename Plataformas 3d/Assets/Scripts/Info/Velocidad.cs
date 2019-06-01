@@ -20,7 +20,7 @@ public class Velocidad : MonoBehaviour {
         {
             Debug.Log("trigger texto");
             info.enabled = true;
-            info.text = "Las esferas azules aumentan tu velocidad lo que te permite saltar mas lejos";
+            info.text = "Las esferas azules aumentan tu velocidad lo que te permite saltar más lejos";
         }
     }
 

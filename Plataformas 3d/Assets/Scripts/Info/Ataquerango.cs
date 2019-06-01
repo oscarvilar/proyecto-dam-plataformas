@@ -21,7 +21,7 @@ public class Ataquerango : MonoBehaviour {
         {
             Debug.Log("trigger texto");
             info.enabled = true;
-            info.text = "Las esferas rojas dan munición, pulsa CLICK IZQ/Y para atacar a distancia";
+            info.text = "Las esferas rojas dan munición, pulsa CLICK DER/Y para atacar a distancia";
         }
     }
 
