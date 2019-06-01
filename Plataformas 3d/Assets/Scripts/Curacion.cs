@@ -16,7 +16,7 @@ public class Curacion : MonoBehaviour {
 
 
     // Use this for initialization
-    void Start()
+    void Awake()
     {
         player = GameObject.FindGameObjectWithTag("Player");
         healthSlider = GameObject.FindGameObjectWithTag("HealthUi").GetComponent<Slider>();
