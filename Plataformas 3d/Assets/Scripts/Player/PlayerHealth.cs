@@ -76,13 +76,13 @@ public class PlayerHealth : MonoBehaviour {
 
     }
 
-    private void revivir()
-    {
-        isDead = false;
-        playerController.enabled = true;
-        animator.SetTrigger("revive");
-        currentHealth = startingHealth;
-        transform.position = gm.ultimo_checkpoint;
-    }
+//    private void revivir()
+//    {
+//        isDead = false;
+//        playerController.enabled = true;
+//        animator.SetTrigger("revive");
+//        currentHealth = startingHealth;
+//        transform.position = gm.ultimo_checkpoint;
+//    }
 
 }

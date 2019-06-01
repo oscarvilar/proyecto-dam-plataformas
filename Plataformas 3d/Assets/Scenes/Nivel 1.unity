@@ -10312,7 +10312,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 1208454258979686, guid: 63baafe2e2a947a40bb164ad36159eb0, type: 2}
       propertyPath: m_TagString
-      value: HealthUi
+      value: Untagged
       objectReference: {fileID: 0}
     - target: {fileID: 1859298776437088, guid: 63baafe2e2a947a40bb164ad36159eb0, type: 2}
       propertyPath: m_TagString
