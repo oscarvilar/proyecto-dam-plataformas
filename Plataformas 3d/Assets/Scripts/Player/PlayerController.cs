@@ -1,6 +1,8 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
+
 
 public class PlayerController : MonoBehaviour {
     public float runSpeed = 6;
@@ -16,6 +18,7 @@ public class PlayerController : MonoBehaviour {
     private const int JUMPS = 2;
     private int current_jumps;
     private GameMaster gm;
+ 
 
 
 
@@ -86,12 +89,15 @@ public class PlayerController : MonoBehaviour {
     
 
 
-    private void OnCollisionEnter()
+    private void OnCollisionEnter(Collision colision)
     {
-        isGrounded = true;
-        current_jumps = 0;
-        //runSpeed = 6f;
-        //animator.SetBool("Grounded", true);
+        if(colision.gameObject.tag == "suelo")
+        {
+            isGrounded = true;
+            current_jumps = 0;
+            Debug.Log("tocando suelo");
+        }
+        
     }
 }
 

@@ -2,22 +2,19 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+
 public class Checkpoint : MonoBehaviour {
     public GameObject player;
     private GameMaster gm;
+
+    
 
 	// Use this for initialization
 	void Start () {
         gm = GameObject.FindGameObjectWithTag("gm").GetComponent<GameMaster>();
         
-	}
+    }
 	
-	// Update is called once per frame
-	void Update () {
-
-
-	}
-
 
     void OnTriggerEnter(Collider col)
     {
@@ -25,6 +22,8 @@ public class Checkpoint : MonoBehaviour {
         {
             gm.ultimo_checkpoint = transform.position;
             Debug.Log("ultimo checkpoint =" + gm.ultimo_checkpoint);
+            SistemaGuardado.guardar(gm);
+            
         }
     }
 

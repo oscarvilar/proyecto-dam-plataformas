@@ -7,7 +7,7 @@ using UnityEngine.SceneManagement;
 public class PlayerHealth : MonoBehaviour {
     public int startingHealth = 100;                                //vida inicial
     public int currentHealth;                                       //Vida actual
-    public Slider healthSlider;                                     //Ref al slider (barra de vida)
+    Slider healthSlider;                                     //Ref al slider (barra de vida)
     public Image damageImage;                                       //Ref imagen que aparece al perder vida
     public float flashSpeed = 5f;                                   //duracion imagen
     public Color flashColour = new Color(1f, 0f, 0f,0.1f);          //color rojo
@@ -19,6 +19,7 @@ public class PlayerHealth : MonoBehaviour {
 
     // Use this for initialization
     void Awake () {
+        healthSlider = GameObject.FindGameObjectWithTag("HealthUi").GetComponent<Slider>();
         animator = GetComponent<Animator>();                        //GET COMPONENTES
         playerController = GetComponent<PlayerController>();
         currentHealth = startingHealth;                             //inicializar vida
@@ -43,7 +44,7 @@ public class PlayerHealth : MonoBehaviour {
 
         damaged = false;
 
-        if (isDead && Input.GetKeyDown("space"))
+        if (isDead && (Input.GetKeyDown("space")|| Input.GetButtonDown("A")))
         {
             //revivir();
             SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);

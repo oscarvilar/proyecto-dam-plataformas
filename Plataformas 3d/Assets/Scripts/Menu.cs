@@ -5,9 +5,14 @@ using UnityEngine.SceneManagement;
 
 public class Menu : MonoBehaviour {
 
-    public void jugar()
+    public void continuar()
     {
-        SceneManager.LoadScene("Nivel 1");
+        
+        string nivel = SistemaGuardado.cargar().nivel;
+
+            SceneManager.LoadScene(nivel);
+ 
+       
     }
 
     public void menu_seleccion()
@@ -28,6 +33,11 @@ public class Menu : MonoBehaviour {
     public void nivel_1()
     {
         SceneManager.LoadScene("Nivel 1");
+    }
+
+    public void nivel_2()
+    {
+        SceneManager.LoadScene("Nivel 2");
     }
 }
 

@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class ThirdPersonCamera : MonoBehaviour {
 
-    public bool lockCursor;
 
     float yaw;
     float pitch;
@@ -37,9 +36,11 @@ public class ThirdPersonCamera : MonoBehaviour {
 
         pitch = Mathf.Clamp(pitch,pitchMin, pitchMax);             //ponerle a un valor un max y un min
 
+        //suavizar la rotacion de la camara
         currentRotation = Vector3.SmoothDamp(currentRotation, new Vector3(pitch, yaw), ref rotationSmoothVelocity, rotationSmoothTime);
+        //rotacion de la camara es igual a rotacion suavizada
         transform.eulerAngles = currentRotation;
 
-        transform.position = target.position - transform.forward * distanceFromTarget; // posicion de la camara
+        transform.position = target.position - (transform.forward * distanceFromTarget); // posicion de la camara
     }
 }

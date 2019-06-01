@@ -43,7 +43,7 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _FlowMap:
-        m_Texture: {fileID: 2800000, guid: 6f69c6af0205556439ba73d144413aa2, type: 3}
+        m_Texture: {fileID: 2800000, guid: ee6dc1be456732d48b3c7bfa74fa6eb0, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _Gradient:

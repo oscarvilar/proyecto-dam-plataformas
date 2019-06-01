@@ -38,6 +38,7 @@ GameObject:
   - component: {fileID: 4440218491360844}
   - component: {fileID: 135380196571132644}
   - component: {fileID: 114512207719521750}
+  - component: {fileID: 95288164655780338}
   m_Layer: 0
   m_Name: Moneda
   m_TagString: Untagged
@@ -51,9 +52,9 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1959438444807372}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 5.112335, y: 0.253, z: 1.94}
-  m_LocalScale: {x: 0.44271, y: 0.44271, z: 0.44271}
+  m_LocalRotation: {x: 0.18645516, y: -0.31815085, z: 0.14540546, w: 0.9180805}
+  m_LocalPosition: {x: 5.112335, y: 1.25, z: 1.94}
+  m_LocalScale: {x: 0.6, y: 0.6, z: 0.6}
   m_Children:
   - {fileID: 4704464524901118}
   m_Father: {fileID: 0}
@@ -78,7 +79,7 @@ MeshRenderer:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1551103925942346}
-  m_Enabled: 1
+  m_Enabled: 0
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
@@ -114,6 +115,24 @@ MeshFilter:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1551103925942346}
   m_Mesh: {fileID: 4300000, guid: 1e24da1124da60645a1e704395b554e7, type: 3}
+--- !u!95 &95288164655780338
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1959438444807372}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 62d5ca108311f2648984c262751b08e3, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!114 &114512207719521750
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -137,7 +156,7 @@ SphereCollider:
   m_GameObject: {fileID: 1959438444807372}
   m_Material: {fileID: 0}
   m_IsTrigger: 1
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 2
   m_Radius: 2.14
   m_Center: {x: 0, y: 0, z: 0}
