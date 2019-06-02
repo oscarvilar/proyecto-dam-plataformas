@@ -33,7 +33,7 @@ public class Municion : MonoBehaviour
     {
         if (col.gameObject == player)
         {
-            cantidad+=20;
+            cantidad+=10;
             moneda_collider.enabled = false;
             moneda_modelo.enabled = false;
         }

@@ -695,6 +695,11 @@ Prefab:
       propertyPath: m_Name
       value: SM_Env_Tiles_02 (9)
       objectReference: {fileID: 0}
+    - target: {fileID: 64824476240935360, guid: 67f6358a70929f943ae115f8b4bcf075,
+        type: 2}
+      propertyPath: m_Convex
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 67f6358a70929f943ae115f8b4bcf075, type: 2}
   m_IsPrefabAsset: 0
@@ -735,7 +740,7 @@ MeshCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Convex: 0
+  m_Convex: 1
   m_CookingOptions: 14
   m_SkinWidth: 0.01
   m_Mesh: {fileID: 4300000, guid: 2b33d93632b2cc1408a952ea2be3079e, type: 3}
@@ -1161,7 +1166,7 @@ MeshCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Convex: 0
+  m_Convex: 1
   m_CookingOptions: 14
   m_SkinWidth: 0.01
   m_Mesh: {fileID: 4300000, guid: 2b33d93632b2cc1408a952ea2be3079e, type: 3}
@@ -1861,6 +1866,11 @@ Prefab:
       propertyPath: m_RootOrder
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 64824476240935360, guid: 67f6358a70929f943ae115f8b4bcf075,
+        type: 2}
+      propertyPath: m_Convex
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 67f6358a70929f943ae115f8b4bcf075, type: 2}
   m_IsPrefabAsset: 0
@@ -2033,7 +2043,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 251030199}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 61, y: 0, z: 6}
+  m_LocalPosition: {x: 61, y: 1.5, z: 6}
   m_LocalScale: {x: 30, y: 1, z: 30}
   m_Children: []
   m_Father: {fileID: 0}
@@ -2551,7 +2561,7 @@ MeshCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Convex: 0
+  m_Convex: 1
   m_CookingOptions: 14
   m_SkinWidth: 0.01
   m_Mesh: {fileID: 4300000, guid: 2b33d93632b2cc1408a952ea2be3079e, type: 3}
@@ -3859,7 +3869,7 @@ MeshCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Convex: 0
+  m_Convex: 1
   m_CookingOptions: 14
   m_SkinWidth: 0.01
   m_Mesh: {fileID: 4300000, guid: 2b33d93632b2cc1408a952ea2be3079e, type: 3}
@@ -3961,6 +3971,11 @@ Prefab:
     - target: {fileID: 121644, guid: 67f6358a70929f943ae115f8b4bcf075, type: 2}
       propertyPath: m_Name
       value: SM_Env_Tiles_02 (3)
+      objectReference: {fileID: 0}
+    - target: {fileID: 64824476240935360, guid: 67f6358a70929f943ae115f8b4bcf075,
+        type: 2}
+      propertyPath: m_Convex
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 67f6358a70929f943ae115f8b4bcf075, type: 2}
@@ -4237,6 +4252,11 @@ Prefab:
     - target: {fileID: 121644, guid: 67f6358a70929f943ae115f8b4bcf075, type: 2}
       propertyPath: m_Name
       value: SM_Env_Tiles_02 (13)
+      objectReference: {fileID: 0}
+    - target: {fileID: 64824476240935360, guid: 67f6358a70929f943ae115f8b4bcf075,
+        type: 2}
+      propertyPath: m_Convex
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 67f6358a70929f943ae115f8b4bcf075, type: 2}
@@ -4659,6 +4679,11 @@ Prefab:
     - target: {fileID: 121644, guid: 67f6358a70929f943ae115f8b4bcf075, type: 2}
       propertyPath: m_Name
       value: SM_Env_Tiles_02 (10)
+      objectReference: {fileID: 0}
+    - target: {fileID: 64824476240935360, guid: 67f6358a70929f943ae115f8b4bcf075,
+        type: 2}
+      propertyPath: m_Convex
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 67f6358a70929f943ae115f8b4bcf075, type: 2}
@@ -5302,7 +5327,7 @@ MeshCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Convex: 0
+  m_Convex: 1
   m_CookingOptions: 14
   m_SkinWidth: 0.01
   m_Mesh: {fileID: 4300000, guid: 2b33d93632b2cc1408a952ea2be3079e, type: 3}
@@ -5990,6 +6015,11 @@ Prefab:
       propertyPath: m_Name
       value: SM_Env_Tiles_02 (6)
       objectReference: {fileID: 0}
+    - target: {fileID: 64824476240935360, guid: 67f6358a70929f943ae115f8b4bcf075,
+        type: 2}
+      propertyPath: m_Convex
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 67f6358a70929f943ae115f8b4bcf075, type: 2}
   m_IsPrefabAsset: 0
@@ -6395,6 +6425,11 @@ Prefab:
       propertyPath: m_Name
       value: SM_Env_Tiles_02 (12)
       objectReference: {fileID: 0}
+    - target: {fileID: 64824476240935360, guid: 67f6358a70929f943ae115f8b4bcf075,
+        type: 2}
+      propertyPath: m_Convex
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 67f6358a70929f943ae115f8b4bcf075, type: 2}
   m_IsPrefabAsset: 0
@@ -6480,7 +6515,7 @@ MeshCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Convex: 0
+  m_Convex: 1
   m_CookingOptions: 14
   m_SkinWidth: 0.01
   m_Mesh: {fileID: 4300000, guid: 2b33d93632b2cc1408a952ea2be3079e, type: 3}
@@ -6616,7 +6651,7 @@ MeshCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Convex: 0
+  m_Convex: 1
   m_CookingOptions: 14
   m_SkinWidth: 0.01
   m_Mesh: {fileID: 4300000, guid: 2b33d93632b2cc1408a952ea2be3079e, type: 3}
@@ -8513,6 +8548,11 @@ Prefab:
       propertyPath: m_Name
       value: SM_Env_Tiles_02 (14)
       objectReference: {fileID: 0}
+    - target: {fileID: 64824476240935360, guid: 67f6358a70929f943ae115f8b4bcf075,
+        type: 2}
+      propertyPath: m_Convex
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 67f6358a70929f943ae115f8b4bcf075, type: 2}
   m_IsPrefabAsset: 0
@@ -9945,6 +9985,11 @@ Prefab:
       propertyPath: m_Name
       value: SM_Env_Tiles_02 (7)
       objectReference: {fileID: 0}
+    - target: {fileID: 64824476240935360, guid: 67f6358a70929f943ae115f8b4bcf075,
+        type: 2}
+      propertyPath: m_Convex
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 67f6358a70929f943ae115f8b4bcf075, type: 2}
   m_IsPrefabAsset: 0
@@ -11303,7 +11348,7 @@ MeshCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Convex: 0
+  m_Convex: 1
   m_CookingOptions: 14
   m_SkinWidth: 0.01
   m_Mesh: {fileID: 4300000, guid: 2b33d93632b2cc1408a952ea2be3079e, type: 3}

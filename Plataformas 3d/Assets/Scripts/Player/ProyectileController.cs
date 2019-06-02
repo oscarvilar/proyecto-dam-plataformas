@@ -73,9 +73,11 @@ public class ProyectileController : MonoBehaviour {
         if (col.gameObject.tag == "HitBoxEnemy")
         {
             enemyHealth = col.gameObject.GetComponentInParent<EnemyHealth>();
-            enemyHealth.TakeDamage(rangeDamage);
-            Destroy(this.gameObject);
-
+            if (enemyHealth.isDead == false)
+            {
+                enemyHealth.TakeDamage(rangeDamage);
+                Destroy(this.gameObject);
+            }
         }
     }
 }
