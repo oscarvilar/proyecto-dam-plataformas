@@ -21,11 +21,9 @@ public class MeleeController : MonoBehaviour {
         if (Input.GetButtonDown("X") || Input.GetMouseButtonDown(0))
         {
             anim.SetTrigger("MeleeAttack");
-            if (hit)
+            if (hit && enemyHealth.isDead == false)
             {
-                {
-                    enemyHealth.TakeDamage(playerAttackDamage);
-                }
+                 enemyHealth.TakeDamage(playerAttackDamage);
             }
         }
     }
@@ -38,6 +36,7 @@ public class MeleeController : MonoBehaviour {
            enemyHealth =  weaponCollider.gameObject.GetComponentInParent<EnemyHealth>();
            hit = true;
         }
+
     }
 
 }

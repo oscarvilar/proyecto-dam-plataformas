@@ -10,7 +10,7 @@ public class EnemyHealth : MonoBehaviour
     public int currentHealth;
     public GameObject enemy;
     Animator anim;                                                                            
-    bool isDead;                               
+    public bool isDead;                               
     EnemyController enemyController;
     public GameObject objeto;
     
@@ -21,27 +21,28 @@ public class EnemyHealth : MonoBehaviour
         enemyController = GetComponent<EnemyController>();
         anim = GetComponent<Animator>();
         currentHealth = startingHealth;
+        isDead = false;
     }
 
 
     public void TakeDamage(int amount)
     {
 
-        currentHealth -= amount;
-
+       currentHealth -= amount;
+       
         if (currentHealth <= 0)
         {
+            isDead = true;
             Death();
-
         }
     }
 
 
     void Death()
     {
+        //isDead = true;
         enemy.GetComponent<EnemyController>().enabled = false;
         enemy.GetComponent<NavMeshAgent>().enabled = false;
-        isDead = true;
         anim.SetTrigger("Dead");
         Instantiate(objeto, transform.position, transform.rotation);
 
