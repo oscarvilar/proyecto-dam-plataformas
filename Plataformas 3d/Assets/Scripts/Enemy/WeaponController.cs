@@ -17,10 +17,13 @@ public class WeaponController : MonoBehaviour {
 
     void OnTriggerExit(Collider other)
     {
+        //Si toco al jugador..
         if (other.gameObject == player)
         {
+            //Y su vida es mayor a 0...
             if (playerHealth.currentHealth > 0)
             {
+                //..El jugador recibe daño
                 playerHealth.TakeDamage(attackDamage);
             }
         }

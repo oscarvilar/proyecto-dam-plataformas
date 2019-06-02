@@ -44,6 +44,7 @@ public class EnemyHealth : MonoBehaviour
         enemy.GetComponent<EnemyController>().enabled = false;
         enemy.GetComponent<NavMeshAgent>().enabled = false;
         anim.SetTrigger("Dead");
+        //Instanciar el prefab que le pase
         Instantiate(objeto, transform.position, transform.rotation);
 
     }
