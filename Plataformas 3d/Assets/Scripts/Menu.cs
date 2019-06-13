@@ -7,12 +7,16 @@ public class Menu : MonoBehaviour {
 
     public void continuar()
     {
-        
-        string nivel = SistemaGuardado.cargar().nivel;
 
+        string nivel = SistemaGuardado.cargar().nivel;
+        if (nivel != null)
+        {
             SceneManager.LoadScene(nivel);
- 
-       
+        }
+        else
+        {
+            SceneManager.LoadScene("Nivel 1");
+        }
     }
 
     public void menu_seleccion()
